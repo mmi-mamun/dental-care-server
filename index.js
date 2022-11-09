@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+let jwt = require('jsonwebtoken');
+// var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
 const app = express();
 const port = process.env.PORT || 5000;
 require('dotenv').config();
@@ -34,6 +36,12 @@ async function run() {
             const cursor = serviceCollection.find(query);
             const services = await cursor.toArray();
             res.send(services);
+        })
+
+        app.post('/services', async (req, res) => {
+            const service = req.body;
+            const result = await serviceCollection.insertOne(service);
+            res.send(result);
         })
 
         // app.get('services/:id', async (req, res) => {
@@ -90,6 +98,12 @@ async function run() {
             }
             const result = await reviewCollection.updateOne(query, updatedDoc);
             res.send(result);
+        })
+
+        //JWT
+        app.get('/jwt', (req, res) => {
+            const user = req.body;
+            console.log(user);
         })
 
     }
