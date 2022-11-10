@@ -50,6 +50,6 @@ It's a themeable UI components library. It is a plugin for Tailwind CSS. Faster 
 
 
 ## Conclusion
-_Finally, I can fulfil this project by 3 days working. I think it would be be attractive for all users. This project will be update if needed_
+_Finally, I can fulfil this project by 3 days working. I think it would be attractive for all users. This project will be update if needed_
 
 # **Thank You** #
